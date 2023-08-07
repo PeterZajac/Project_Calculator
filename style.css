@@ -11,36 +11,66 @@ justify-content: center;
 align-items: center;
 height: 100vh;
 background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-
 }
 .container {
-    background-color: black;
+    background-color: rgb(45, 53, 61);
     padding: 40px 24px; 
     border-radius: 20px; 
+    box-shadow: 12px -12px 6px teal;
     max-width: 400px; 
     width: 100%;
     position: relative;
+    
 }
 
 .container .screen {
-    color: black;
+    color: rgb(0, 0, 0);
     background-color: white;
     text-align: right;
     margin: 10px 0; 
     padding: 20px; 
     font-size: 32px; 
+    border-radius: 10px;
+}
+
+.result{
+    font-size: 25px;
 }
 
 .operator{
     color: rgba(205, 44, 44, 0.774);
 }
+
+element.style {
+}
 .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px; 
+    width: 225px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+button{
+    border-radius: 10px;
+    border: none;
+}
+button:hover{
+    background-color: rgb(89, 86, 94);
+    color: white;
+    cursor: pointer;
+
 }
 
 .buttons button {
     font-size: 24px;
-    padding: 16px; 
+    padding: 19px;
 }
+
+#history, #slash, #mult, #subt,#plus{
+    background-color: rgb(218, 141, 0);
+}
+#AC, #equal{
+    background-color: rgba(183, 3, 3, 0.926);
+}
+
+
