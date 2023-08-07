@@ -15,9 +15,9 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%
 }
 .container {
     background-color: black;
-    padding: 40px 24px; /* Zväčšené vnútorné odsadenie */
-    border-radius: 20px; /* Zväčšený polomer zaoblenia */
-    max-width: 400px; /* Zväčšená maximálna šírka */
+    padding: 40px 24px; 
+    border-radius: 20px; 
+    max-width: 400px; 
     width: 100%;
     position: relative;
 }
@@ -26,9 +26,9 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%
     color: black;
     background-color: white;
     text-align: right;
-    margin: 10px 0; /* Zväčšený odstup */
-    padding: 20px; /* Zväčšené vnútorné odsadenie */
-    font-size: 32px; /* Zväčšená veľkosť písma zobrazenia */
+    margin: 10px 0; 
+    padding: 20px; 
+    font-size: 32px; 
 }
 
 .operator{
@@ -37,10 +37,10 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px; /* Medzera medzi tlačidlami */
+    gap: 10px; 
 }
 
 .buttons button {
-    font-size: 24px; /* Zväčšená veľkosť písma tlačidiel */
-    padding: 16px; /* Zväčšený odsah tlačidiel */
+    font-size: 24px;
+    padding: 16px; 
 }
