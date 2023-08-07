@@ -10,19 +10,37 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: 100vh;
-background: linear-gradient(0.25turn, #000000, #ebf8e1, #000000);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+
+}
+.container {
+    background-color: black;
+    padding: 40px 24px; /* Zväčšené vnútorné odsadenie */
+    border-radius: 20px; /* Zväčšený polomer zaoblenia */
+    max-width: 400px; /* Zväčšená maximálna šírka */
+    width: 100%;
+    position: relative;
 }
 
-.container .screen{
+.container .screen {
     color: black;
-    border: 1px solid red;
     background-color: white;
     text-align: right;
-    margin: 5px 0;
-}
-.container{
-    background-color: black;
-    padding: 20px 14px;
-    border-radius: 13px;
+    margin: 10px 0; /* Zväčšený odstup */
+    padding: 20px; /* Zväčšené vnútorné odsadenie */
+    font-size: 32px; /* Zväčšená veľkosť písma zobrazenia */
 }
 
+.operator{
+    color: rgba(205, 44, 44, 0.774);
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; /* Medzera medzi tlačidlami */
+}
+
+.buttons button {
+    font-size: 24px; /* Zväčšená veľkosť písma tlačidiel */
+    padding: 16px; /* Zväčšený odsah tlačidiel */
+}
