@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: linear-gradient(0.25turn, #000000, #ebf8e1, #000000);
+}
+
+.container .screen{
+    color: black;
+    border: 1px solid red;
+    background-color: white;
+    text-align: right;
+    margin: 5px 0;
+}
+.container{
+    background-color: black;
+    padding: 20px 14px;
+    border-radius: 13px;
+}
+
