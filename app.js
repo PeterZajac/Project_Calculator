@@ -9,7 +9,7 @@ buttons.forEach((button) => {
     const buttonValue = button.value;
 
     if (buttonValue === "clear") {
-      input = "-";
+      input = "";
       displayInput.innerText = " ";
       displayResult.innerText = "  ";
     } else if (buttonValue === "equal") {
@@ -48,8 +48,6 @@ function validInput(buttonValue, currentInput) {
   }
   return true;
 }
-
-// Zabezpečenie, aby sa za sebou nemohli nachádzať dve znamienka
 
 // Funkcia na kontrolu, či je znak operátor (+, -, *, /)
 function isOperator(char) {
