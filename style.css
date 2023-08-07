@@ -29,7 +29,7 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%
     text-align: right;
     margin: 10px 0; 
     padding: 20px; 
-    font-size: 32px; 
+    font-size: 20px; 
     border-radius: 10px;
 }
 
@@ -41,8 +41,6 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%
     color: rgba(205, 44, 44, 0.774);
 }
 
-element.style {
-}
 .buttons {
     width: 225px;
     display: flex;
