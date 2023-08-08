@@ -8,32 +8,40 @@
     <title>Kalkulačka</title>
   </head>
   <body>
+    <div class="historyRecordsBackground">
+      <button class="clearHistoryRecordsButton">Clear</button>
+
+      <p class="historyRecords">Ahoj</p>
+      <p class="historyRecords">asd</p>
+      <p class="historyRecords">asd</p>
+    </div>
     <main>
       <div class="container">
+        <div class="showHistory">History</div>
         <div class="screen">
           <div class="display">0 <span class="operator"></span></div>
           <div value=" " class="result"></div>
         </div>
 
         <div class="buttons">
-          <button value="clear" id="AC" style="flex-grow: 10">AC</button>
-          <button value="history" id="history">H</button>
-          <button value="/" id="slash">/</button>
-          <button value="7" id="numSeven">7</button>
-          <button value="8" id="numEight">8</button>
-          <button value="9" id="numNine">9</button>
-          <button value="*" id="mult">x</button>
-          <button value="4" id="numFour">4</button>
-          <button value="5" id="numFive">5</button>
-          <button value="6" id="numSix">6</button>
-          <button value="-" id="subt">-</button>
-          <button value="1" id="numOne">1</button>
-          <button value="2" id="numTwo">2</button>
-          <button value="3" id="numThree">3</button>
-          <button value="+" id="plus">+</button>
-          <button value="0" id="numZero">0</button>
-          <button value="." id="comma">.</button>
-          <button value="equal" id="equal" style="flex-grow: 1">=</button>
+          <button value="clear" class="AC" style="flex-grow: 10">AC</button>
+          <button value="history" class="history showHistoryButton">H</button>
+          <button value="/" class="slash">/</button>
+          <button value="7" class="numSeven">7</button>
+          <button value="8" class="numEight">8</button>
+          <button value="9" class="numNine">9</button>
+          <button value="*" class="mult">x</button>
+          <button value="4" class="numFour">4</button>
+          <button value="5" class="numFive">5</button>
+          <button value="6" class="numSix">6</button>
+          <button value="-" class="subt">-</button>
+          <button value="1" class="numOne">1</button>
+          <button value="2" class="numTwo">2</button>
+          <button value="3" class="numThree">3</button>
+          <button value="+" class="plus">+</button>
+          <button value="0" class="numZero">0</button>
+          <button value="." class="comma">.</button>
+          <button value="equal" class="equal" style="flex-grow: 1">=</button>
         </div>
       </div>
     </main>

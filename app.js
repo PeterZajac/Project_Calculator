@@ -1,8 +1,18 @@
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".container button");
 const displayInput = document.querySelector(".display");
 const displayResult = document.querySelector(".result");
+const historyRecords = document.querySelector(".historyRecords");
+const historyRecordsBackground = document.querySelector(
+  ".historyRecordsBackground"
+);
+const clearHistoryButton = document.querySelector(".clearHistoryRecordsButton");
+const toggleHistory = document.querySelector(".showHistory");
 
 let input = "";
+
+toggleHistory.addEventListener("click", () => {
+  historyRecordsBackground.classList.toggle("toggleShow");
+});
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -10,14 +20,16 @@ buttons.forEach((button) => {
 
     if (buttonValue === "clear") {
       input = "";
-      displayInput.innerText = " ";
+      displayInput.innerText = input;
       displayResult.innerText = "  ";
     } else if (buttonValue === "equal") {
       const result = eval(input);
       const roundedResult = parseFloat(result.toFixed(3));
       displayResult.innerText = roundedResult;
-      displayInput.innerText = " ";
+      displayInput.innerText = input;
       input = displayResult.innerText;
+    } else if (buttonValue === "history") {
+      saveToLocalStorage(displayInput.innerText, displayResult.innerText);
     } else {
       // Overenie vstupu pred pridaním
       if (validInput(buttonValue, input)) {
@@ -29,13 +41,13 @@ buttons.forEach((button) => {
 });
 
 // Funkcia na overenie vstupu
-function validInput(buttonValue, currentInput) {
+const validInput = (buttonValue, currentInput) => {
   // Zabezpečenie, aby nedochádzalo k viacnásobným desatinným bodkám
-  if (buttonValue === "." && currentInput.includes(".")) {
-    return false;
-  }
-  // Zabezpečenie, aby sa príklad nezačínal s * /
-  if ((buttonValue === "*" || buttonValue === "/") && currentInput === "") {
+  if (
+    (buttonValue === "." && currentInput.includes(".")) ||
+    ((buttonValue === "*" || buttonValue === "/" || buttonValue === ".") &&
+      currentInput === "") // Zabezpečenie, aby sa príklad nezačínal s * / .
+  ) {
     return false;
   }
   // Zabezpečenie, aby sa za sebou nemohli nachádzať dve znamienka
@@ -47,9 +59,14 @@ function validInput(buttonValue, currentInput) {
     return false;
   }
   return true;
-}
+};
 
 // Funkcia na kontrolu, či je znak operátor (+, -, *, /)
-function isOperator(char) {
+const isOperator = (char) => {
   return char === "+" || char === "-" || char === "*" || char === "/";
-}
+};
+
+//Funkcia na uloženie hodnoty do local storage
+const saveToLocalStorage = (key, value) => {
+  localStorage.setItem(JSON.stringify(key), JSON.stringify(value));
+};

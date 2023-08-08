@@ -32,7 +32,41 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%
     font-size: 20px; 
     border-radius: 10px;
 }
+.showHistory{
+    color: rgb(34, 172, 121);
+    transition: color 0.25s;
+    text-align: left;
+    
+}
+.toggleShow{
+    display: none;
+}
+.showHistory:hover{
+    transition: color 0.25s;
+    color: rgb(223, 251, 119);
+    cursor: pointer;
+}
 
+.historyRecordsBackground{
+    
+    background-color: rgb(230, 230, 230);
+    color: black;
+    width: 30%;
+    height: 50%;
+   
+    margin-right: 5%;
+}
+.closeHistoryRecordsButton, .clearHistoryRecordsButton{
+    float: right;
+    margin-right: 3%;
+    margin-top: 3%;
+    padding: 1.5%;
+}
+.historyRecords{
+    max-width: 380px;
+    padding: 0 4%;
+    padding-top: 15px;
+}
 .result{
     font-size: 25px;
 }
@@ -64,10 +98,10 @@ button:hover{
     padding: 19px;
 }
 
-#history, #slash, #mult, #subt,#plus{
+.history, .slash, .mult, .subt,.plus{
     background-color: rgb(218, 141, 0);
 }
-#AC, #equal{
+.AC, .equal{
     background-color: rgba(183, 3, 3, 0.926);
 }
 
