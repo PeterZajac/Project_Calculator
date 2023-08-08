@@ -56,8 +56,8 @@ buttons.forEach((button) => {
       displayInput.innerText = input;
       input = displayResult.innerText;
     } else if (buttonValue === "history") {
-      saveToLocalStorage(displayInput.innerText, displayResult.innerText);
-      addToHistory(displayInput.innerText, displayResult.innerText);
+      saveToLocalStorage(displayInput.textContent, displayResult.textContent);
+      addToHistory(displayInput.textContent, displayResult.textContent);
     } else {
       // Overenie vstupu pred pridaním
       if (validInput(buttonValue, input)) {
