@@ -7,11 +7,38 @@ const historyRecordsBackground = document.querySelector(
 );
 const clearHistoryButton = document.querySelector(".clearHistoryRecordsButton");
 const toggleHistory = document.querySelector(".showHistory");
+const history = document.querySelector(".history");
 
 let input = "";
+clearHistoryButton.addEventListener("click", () => {
+  // Po kliknutí na tlačidlo clear, sa mi vyaže localStorage ale aj
+  localStorage.clear();
+  historyRecords.innerHTML = "";
+});
 
 toggleHistory.addEventListener("click", () => {
   historyRecordsBackground.classList.toggle("toggleShow");
+});
+
+//Funkcia na uloženie hodnoty do local storage
+const saveToLocalStorage = (key, value) => {
+  const savedKey = JSON.stringify(key);
+  const savedValue = JSON.stringify(value);
+  localStorage.setItem(savedKey, savedValue);
+};
+
+const addToHistory = (key, value) => {
+  const newRecordToHistory = document.createElement("p");
+  newRecordToHistory.textContent = `${key} = ${value}`;
+  historyRecords.appendChild(newRecordToHistory);
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  const storedPriklad = localStorage.getItem("storedPriklad");
+  const storedVysledok = localStorage.getItem("storedVysledok");
+  if (storedPriklad && storedVysledok) {
+    addToHistory(storedPriklad, storedVysledok);
+  }
 });
 
 buttons.forEach((button) => {
@@ -30,6 +57,7 @@ buttons.forEach((button) => {
       input = displayResult.innerText;
     } else if (buttonValue === "history") {
       saveToLocalStorage(displayInput.innerText, displayResult.innerText);
+      addToHistory(displayInput.innerText, displayResult.innerText);
     } else {
       // Overenie vstupu pred pridaním
       if (validInput(buttonValue, input)) {
@@ -64,9 +92,4 @@ const validInput = (buttonValue, currentInput) => {
 // Funkcia na kontrolu, či je znak operátor (+, -, *, /)
 const isOperator = (char) => {
   return char === "+" || char === "-" || char === "*" || char === "/";
-};
-
-//Funkcia na uloženie hodnoty do local storage
-const saveToLocalStorage = (key, value) => {
-  localStorage.setItem(JSON.stringify(key), JSON.stringify(value));
 };
